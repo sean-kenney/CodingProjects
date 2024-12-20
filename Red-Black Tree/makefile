@@ -1,0 +1,23 @@
+#I pledge that I have never given nor
+#received any help on this assignment
+#smkenney
+Tree.exe: driver.o TreeNode.o BinarySearchTree.o RedBlackTree.o
+	g++ driver.o TreeNode.o BinarySearchTree.o RedBlackTree.o -o Tree.exe
+	
+driver.o: driver.cpp
+	g++ -c driver.cpp -o driver.o
+
+TreeNode.o: TreeNode.cpp
+	g++ -c TreeNode.cpp -o TreeNode.o
+
+BinarySearchTree.o: BinarySearchTree.cpp
+	g++ -c BinarySearchTree.cpp -o BinarySearchTree.o
+
+RedBlackTree.o: RedBlackTree.cpp
+	g++ -c RedBlackTree.cpp -o RedBlackTree.o
+	
+clean:
+	rm *.o Tree.exe
+	
+run:
+	Tree.exe
